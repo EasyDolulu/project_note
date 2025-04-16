@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create room</title>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Signin Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/static/css/bootstrap-5.3.3-examples/assets/dist/css/bootstrap.min.css">
+    <link href="/static/css/create_room.css" rel="stylesheet">
+
+    
+</head>
+<body class="d-flex align-items-center justify-content-center">
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="alert alert-{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form id="create_room_form"  method="POST" action="/create_room">
+            <div class="mb-3">
+                <label for="exampleInputRoomNumber" class="form-label">Room number</label>
+                <input type="text" class="form-control" id="exampleInputRoomNumber" name="room_number" >
+                <div id="roomHelp" class="form-text">Please enter a four-digit room number.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" aria-describedby="passwordHelp">
+                <div id="passwordHelp" class="form-text">Please enter a four-digit password.</div>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="showPasswordCheck">
+                <label class="form-check-label" for="showPasswordCheck">Show Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+
+    <script src="/static/js/create_room.js"></script>
+    <script src="/static/css/bootstrap-5.3.3-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
+    {% if request.args.get('success') == '1' %}
+        <script>
+            setTimeout(function() {
+                window.location.href = '/sign_in';  // 重定向到登录页面
+            }, 1000);  // 1000 毫秒后重定向
+        </script>
+    {% endif %}
+</body>
+</html>

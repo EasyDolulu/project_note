@@ -1,0 +1,104 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+
+body {
+    position: relative;
+}
+
+
+
+.container {
+    max-width: 100%;
+    
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh; /* 或者您想要的宽度 */
+}
+
+
+.right {
+    flex-grow: 1; /* 使评论区域占据剩余空间 */
+    padding: 20px; /* 内边距 */
+    border-left: 1px solid #ccc; /* 左边框分隔 */
+}
+
+.comments {
+    height: 429px;
+}
+
+.form-floating {
+    min-height: 400px;
+    padding-top: 50px;
+    margin: auto;
+    
+}
+
+#floatingTextarea2 {
+    resize: none ;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.form-floating button {
+    margin-top: 15px;
+    float: right;
+}
+
+.record {
+    
+    margin: auto;
+    padding-top: 50px;
+}
+
+.record ul {
+    padding-left: 0;
+}
+
+.record ul li {
+    padding-top: 10px;
+    list-style-type: none;
+}
+
+#del_button {
+    margin-left: 1vh;
+}
+
+#upload-box {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    height: 100vh; 
+}
+
+.file_upload {
+    width: 100%;
+}
+
+#upload-box {
+    height: 170px;
+}
+
+#file-upload-button {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+}
+
+#fileName {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    height: 100%;             /* 填满父元素 */
+    text-align: center;
+}
+
+
+
+
+
+
+
+
