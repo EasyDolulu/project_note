@@ -3,14 +3,20 @@ from flask_mysqldb import MySQL
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 import os
+from urllib.parse import urlparse
 
 app = Flask(__name__)
 
 # MySQL 配置
-app.config['MYSQL_HOST'] = '127.0.0.1'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '1234'
-app.config['MYSQL_DB'] = 'database_try'
+# app.config['MYSQL_HOST'] = '127.0.0.1'
+# app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = '1234'
+# app.config['MYSQL_DB'] = 'database_try'
+app.config['MYSQL_HOST'] = 'd6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_USER'] = 'fngjcbt9w98nprpb'
+app.config['MYSQL_PASSWORD'] = 'g3lv6xbv6luuykq8'
+app.config['MYSQL_DB'] = 's0p17axgv8y3gk47'
+app.config['MYSQL_PORT'] = 3306
 app.secret_key = 'your_secret_key'
 
 app.config['UPLOAD_FOLDER'] = 'uploads'  # 上传文件的存储目录
